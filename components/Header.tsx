@@ -1,6 +1,10 @@
 const Header = () => {
     return (
-        <div className='p-6 bg-red-300'>Header</div>
+        <div className='flex justify-between p-3'>
+            <div>
+                Sui Chess
+            </div>
+        </div>
     )
 }
 
