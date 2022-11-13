@@ -1,15 +1,29 @@
+import { useMemo, useState } from 'react'
 import type { NextPage } from "next";
 import { Modal, Header, Footer, Game } from "../components";
+import { GameContext } from "../lib";
+
+export interface Game {
+
+}
 
 const GamePage: NextPage = () => {
-  return (
-    <div className='container relative'>
-        <Modal />
-        <Header />
-        <Game />
-        <Footer />
-    </div>
-  );
+    const [game, setGame] = useState<Game>();
+
+    const gameContext = useMemo(() => ({
+        newGame: () => {}
+    }), []);
+
+    return (
+        <GameContext.Provider value={gameContext}>
+            <div className='container relative m-auto'>
+                <Modal />
+                <Header />
+                <Game />
+                <Footer />
+            </div>
+        </GameContext.Provider>
+    );
 };
 
 export default GamePage;
