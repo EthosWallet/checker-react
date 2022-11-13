@@ -7,11 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "rm -rf docs && yarn build && next export && mv out docs && touch docs/.nojekyll"
+    "pre-export": "rm -rf docs && mv next.config.js next.config-dev.js && mv next.config-export.js next.config.js && yarn build",
+    "post-export": "mv next.config.js next.config-export.js && mv next.config-dev.js next.config.js && mv out docs && touch docs/.nojekyll",
+    "export": "yarn pre-export && next export && yarn post-export"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
-    "ethos-connect": "^0.0.21",
+    "ethos-connect": "^0.0.25",
     "next": "13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
