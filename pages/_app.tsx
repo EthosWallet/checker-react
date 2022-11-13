@@ -6,17 +6,15 @@ import type { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const ethosConfiguration = {
-    // When testing, use our staging link. When in production you may comment this line out.
-    // walletAppUrl: 'https://sui-wallet-staging.onrender.com',
-    apiKey: "ethos-example-app",
+    apiKey: "sui-checkers",
   };
 
   return (
     <EthosConnectProvider
       ethosConfiguration={ethosConfiguration}
-      dappName="EthosConnect Example App"
+      dappName="Sui Checkers"
       dappIcon={<ExampleIcon />}
-      connectMessage="Your connect message goes here!"
+      connectMessage="Connect to Sui Checkers!"
     >
       <Component {...pageProps} />
     </EthosConnectProvider>

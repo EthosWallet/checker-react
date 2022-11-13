@@ -3,6 +3,8 @@ import { ethos, SignInButton } from "ethos-connect";
 const Game = () => {
     const { wallet } = ethos.useWallet();
 
+    console.log("WALLET", wallet)
+
     return (
         <div>
             <div>Game</div>
