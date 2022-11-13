@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "rm -rf docs && yarn build && next export && mv out docs"
+    "export": "rm -rf docs && yarn build && next export && mv out docs && touch docs/.nojekyll"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
