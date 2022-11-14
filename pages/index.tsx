@@ -1,18 +1,11 @@
-import { useMemo, useState } from 'react'
 import type { NextPage } from "next";
 import { Modal, Header, Footer, Game } from "../components";
 import { GameContext } from "../lib";
-
-export interface Game {
-
-}
+import { useGameContext } from "../hooks"
+import type { Game } from '../types'
 
 const GamePage: NextPage = () => {
-    const [game, setGame] = useState<Game>();
-
-    const gameContext = useMemo(() => ({
-        newGame: () => {}
-    }), []);
+    const gameContext = useGameContext()
 
     return (
         <GameContext.Provider value={gameContext}>
